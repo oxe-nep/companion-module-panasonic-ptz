@@ -1220,7 +1220,7 @@ export function getActionDefinitions(self) {
 
 	if (seriesActions.nightMode) {
 		actions.nightMode = {
-			name: 'Day/Night - Mode',
+			name: 'Exposure - Day/Night Mode',
 			options: [
 			  {
 				type: 'dropdown',

@@ -83,6 +83,7 @@ It's recommended to use the presets as much as possible as there is a lot of act
 - Set ND Filter
 - ND Filter Up
 - ND Filter Down
+- Day/Night Mode
 
 **System**
 
