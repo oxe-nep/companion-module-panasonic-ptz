@@ -1217,7 +1217,27 @@ export function getActionDefinitions(self) {
 			},
 		}
 	}
-	
+
+	if (seriesActions.nightMode) {
+		actions.nightMode = {
+			name: 'Day/Night - Mode',
+			options: [
+			  {
+				type: 'dropdown',
+				label: 'Mode',
+				id: 'mode',
+				default: '0',
+				choices: [
+				  { id: '0', label: 'Day (Off)' },
+				  { id: '1', label: 'Night (On)' },
+				],
+			  },
+			],
+			callback: async (action) => {
+			  await sendPTZ(self, 'D6' + action.options.mode)
+			},
+		}
+	}
 
 	// #########################
 	// #### Presets Actions ####

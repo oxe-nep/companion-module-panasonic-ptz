@@ -293,6 +293,9 @@ class PanasonicPTZInstance extends InstanceBase {
 			case 'OGU':
 				this.data.gainValue = str[1].toString().replace('0x', '')
 				break
+			case 'd6':
+				this.data.nightMode = str[1] === '0' ? 'Day' : 'Night'
+				break
 			default:
 				break
 		}
@@ -334,6 +337,7 @@ class PanasonicPTZInstance extends InstanceBase {
 			colorBarTitle: 'NaN',
 			colorBarTone: 'NaN',
 			colorBarType: 'Nan',
+			nightMode: 'NaN',
 		}
 
 		this.ptSpeed = 25

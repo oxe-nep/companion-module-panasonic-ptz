@@ -471,5 +471,47 @@ export function getFeedbackDefinitions(self) {
 		}
 	}
 
+	if (SERIES.feedbacks.nightMode) {
+		feedbacks.nightMode = {
+		  type: 'boolean',
+		  name: 'Day/Night - Mode',
+		  description: 'Indicate if camera is in Day or Night mode',
+		  defaultStyle: {
+			color: foregroundColor,
+			bgcolor: backgroundColorRed,
+		  },
+		  options: [
+			{
+			  type: 'dropdown',
+			  label: 'Indicate in X State',
+			  id: 'option',
+			  default: '1',
+			  choices: [
+				{ id: '0', label: 'Day (Off)' },
+				{ id: '1', label: 'Night (On)' },
+			  ],
+			},
+		  ],
+		  callback: function (feedback) {
+			const opt = feedback.options
+			switch (opt.option) {
+			  case '0':
+				if (self.data.nightMode === 'Day') {
+				  return true
+				}
+				break
+			  case '1':
+				if (self.data.nightMode === 'Night') {
+				  return true
+				}
+				break
+			  default:
+				break
+			}
+			return false
+		  },
+		}
+	  }
+
 	return feedbacks
 }

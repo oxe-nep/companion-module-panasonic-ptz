@@ -325,6 +325,7 @@ export const SERIES_SPECS = [
 			colorBarsTypeState: true,
 			colorBarsTitleState: false,
 			colorBarsToneState: true,
+			nightMode: true,
 		},
 		actions: {
 			panTilt: true,
@@ -356,6 +357,7 @@ export const SERIES_SPECS = [
 			colorBarsTone: true,
 			sceneSelect: true,
 			whiteBalanceMode: true,
+			nightMode: true,
 		},
 	},
 
